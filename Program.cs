@@ -76,63 +76,71 @@
 // Console.WriteLine($"O resultado de {numero}! é igual a {fatorial}");
 
 // desafio 3 
-Console.WriteLine("Informe o login e senha corretamente! Você tem três tentativas!");
-string login = "Taise";
-string senha = "1234";
-string l;
-string s;
+// Console.WriteLine("Informe o login e senha corretamente! Você tem três tentativas!");
+// string login = "Taise";
+// string senha = "1234";
+// string l;
+// string s;
 
-for (int i = 1; i < 4; i++)
-{
-    Console.WriteLine($"Sua {i}ª tentativa: ");
-    Console.WriteLine("Informe o login: ");
-    l = Console.ReadLine();
-    Console.WriteLine("Informe a senha: ");
-    s = Console.ReadLine();
-    if (login == l && senha == s) {
-        Console.WriteLine("Login realizado com sucesso!");
-        break;
-    } else
-    {
-        if (i == 3)
-        {
-            Console.WriteLine("Acesso bloqueado!");
-        }
-    }
-}
+// for (int i = 1; i < 4; i++)
+// {
+//     Console.WriteLine($"Sua {i}ª tentativa: ");
+//     Console.WriteLine("Informe o login: ");
+//     l = Console.ReadLine();
+//     Console.WriteLine("Informe a senha: ");
+//     s = Console.ReadLine();
+//     if (login == l && senha == s) {
+//         Console.WriteLine("Login realizado com sucesso!");
+//         break;
+//     } else
+//     {
+//         if (i == 3)
+//         {
+//             Console.WriteLine("Acesso bloqueado!");
+//         }
+//     }
+// }
 
 
 //  desafio 4
-// Console.WriteLine("=-=-= Bem-vindo ao simulado de caixa eletrônico =-=-=");
+Console.WriteLine("=-=-= Bem-vindo ao simulado de caixa eletrônico =-=-=");
 
-// Console.WriteLine("Informe seu saldo atual: ");
-// double saldo = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Informe seu saldo atual: ");
+double saldo = Convert.ToDouble(Console.ReadLine());
 
-// Console.WriteLine("1 - Depositar | 2 - Sacar | 3 - ver saldo | 4 - Sair");
-// Console.WriteLine("Informe sua opção (1, 2, 3 ou 4): ");
+int opc = 0;
 
-// int opc = Convert.ToInt32(Console.ReadLine());
+while (opc != 4) {
+    Console.WriteLine("1 - Depositar | 2 - Sacar | 3 - Ver saldo | 4 - Sair");
+    Console.WriteLine("Informe sua opção (1, 2, 3 ou 4): ");
+    opc = Convert.ToInt32(Console.ReadLine());
 
-// while (opc != 4 && saldo > 0) {
-
-//     if (opc == 1)
-//     {
-//         Console.WriteLine("Informe quanto deseja depositar (R$): ");
-//         double ValorDeposito = Convert.ToDouble(Console.ReadLine());
-//         saldo += ValorDeposito;
-//     } else if (opc == 2)
-//     {
-//         Console.WriteLine("Informe quanto deseja sacar (R$): ");
-//         double valorSaque = Convert.ToDouble(Console.ReadLine());
-//         if (valorSaque > saldo)
-//         {
-//             Console.WriteLine("Saldo insuficiente para saque!");
-//         } else
-//         {
-//             saldo -= valorSaque;
-//         }
-//     } else if (opc == 3)
-//     {
-//         Console.WriteLine($"Seu saldo atual é igual a R${saldo}!");
-//     }
-// }
+    if (opc == 1)
+    {
+        Console.WriteLine("Informe quanto deseja depositar (R$): ");
+        double ValorDeposito = Convert.ToDouble(Console.ReadLine());
+        saldo += ValorDeposito;
+        Console.WriteLine($"Depósito de R${ValorDeposito} realizado com sucesso!");
+    } else if (opc == 2)
+    {
+        Console.WriteLine("Informe quanto deseja sacar (R$): ");
+        double valorSaque = Convert.ToDouble(Console.ReadLine());
+        if (valorSaque > saldo)
+        {
+            Console.WriteLine("Saldo insuficiente para saque!");
+        } else
+        {
+            saldo -= valorSaque;
+            Console.WriteLine($"Saque de R${valorSaque} realizado com sucesso!");
+        }
+    } else if (opc == 3)
+    {
+        Console.WriteLine($"Seu saldo atual é igual a R${saldo}!");
+    } else if (opc == 4) 
+    {
+        Console.WriteLine("Até a próxima!");
+    } else
+    {
+        Console.WriteLine("Opção inválida! Tente novamente!");
+    }
+}
